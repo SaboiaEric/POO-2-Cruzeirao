@@ -24,7 +24,7 @@ public class UserWizard implements Serializable {
 	}
 
 	public void save() {
-		FacesMessage msg = new FacesMessage("Successful", "Welcome :" + user.getClubName());
+		FacesMessage msg = new FacesMessage("Cadastrado com sucesso", "Bem vindo:" + user.getClubName());
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 
@@ -39,7 +39,7 @@ public class UserWizard implements Serializable {
 	public String onFlowProcess(FlowEvent event) {
 		if (skip) {
 			skip = false; // reset in case user goes back
-			return "confirm";
+			return "confirmar";
 		} else {
 			return event.getNewStep();
 		}

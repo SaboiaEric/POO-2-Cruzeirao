@@ -1,4 +1,4 @@
-package sistema;
+package sistema.views;
  
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
