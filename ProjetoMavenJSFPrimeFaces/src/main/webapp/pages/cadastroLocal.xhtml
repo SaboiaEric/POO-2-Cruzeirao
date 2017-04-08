@@ -19,6 +19,9 @@
 	  <h:form id="formLocal">	
 	  <p:panelGrid columns="2">
       
+      <p:outputLabel value="#{msg['pages.cadastroLocal.nome']}" />
+      <p:inputText value="#{localManagedBean.local.nome}"/>
+      
 	  <p:outputLabel value="#{msg['pages.cadastroLocal.rua']}" />
       <p:inputText value="#{localManagedBean.local.rua}"/>
 	  
@@ -45,6 +48,9 @@
                 var="aux"
                 id="tabelaLocal"
    >
+      <p:column headerText="#{msg['pages.cadastroLocal.nome']}">
+        <p:outputLabel value="#{aux.nome}" />
+      </p:column>
       <p:column headerText="#{msg['pages.cadastroLocal.rua']}">
         <p:outputLabel value="#{aux.rua}" />
       </p:column>
