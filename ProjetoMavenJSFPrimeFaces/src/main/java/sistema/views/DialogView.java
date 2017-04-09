@@ -10,7 +10,7 @@ import org.primefaces.event.CloseEvent;
 public class DialogView {
  
     public void destroyWorld() {
-        addMessage("Inscrição confirmada", "Boa sorte para você e tua equipe.");
+        addMessage("Inscrição confirmada", "Boa sorte para você e para tua equipe.");
     }
      
     public void addMessage(String summary, String detail) {
