@@ -6,21 +6,23 @@
 	<h:form>
 		<p:panelMenu>
 		    <p:submenu label="#{msg['pages.comuns.menuLateral.inicio']}" >
-		       <p:menuitem value="#{msg['pages.home.menu']}" url="login.xhtml" />
-			   <p:menuitem value="#{msg['pages.login.menu']}" url="login.xhtml" />
-			   <p:menuitem value="#{msg['pages.sobre.menu']}" url="TESTE.xhtml" />
-			   <p:menuitem value="#{msg['pages.regulamento.menu']}" url="TESTE.xhtml" />
+		       <p:menuitem value="#{msg['pages.novoUsuario.menu']}" url="novoUsuario.xhtml" />		       
+			   <p:menuitem value="#{msg['pages.login.menu']}" url="login.xhtml" />			  
 			</p:submenu>
 			
 			
 		
-			<p:submenu label="#{msg['pages.comuns.menuLateral.campeonato']}">			
+			<p:submenu label="#{msg['pages.comuns.menuLateral.campeonato']}">
+			<p:submenu label="#{msg['pages.comuns.menuLateral.cadastro']}">	
+				<p:menuitem value="#{msg['pages.campeonato.menu']}" url="TESTE.xhtml" />			
 				<p:menuitem value="#{msg['pages.categoria.menu']}" url="TESTE.xhtml" />					
 				<p:menuitem value="#{msg['pages.local.menu']}" url="TESTE.xhtml" />				
 				<p:menuitem value="#{msg['pages.chaves.menu']}" url="TESTE.xhtml" />				
-				<p:menuitem value="#{msg['pages.juiz.menu']}" url="TESTE.xhtml" />				
-				<p:menuitem value="#{msg['pages.gerenciarjogos.menu']}" url="TESTE.xhtml" />				
-	       </p:submenu>
+				<p:menuitem value="#{msg['pages.juiz.menu']}" url="TESTE.xhtml" />	
+			</p:submenu>			
+				<p:menuitem value="#{msg['pages.gerenciarjogos.menu']}" url="TESTE.xhtml" />
+			</p:submenu>				
+	      
 	       
 	       
 	       <p:submenu label="#{msg['pages.comuns.menuLateral.time']}">			
