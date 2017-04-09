@@ -1,6 +1,5 @@
 package sistema.modelos;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 public class Inscricao {
