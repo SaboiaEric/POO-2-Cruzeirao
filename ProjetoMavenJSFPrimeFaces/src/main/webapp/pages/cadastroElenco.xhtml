@@ -20,39 +20,28 @@
 
 		<h:form id="formElenco">
 			<p:panelGrid columns="2">
-				<p:outputLabel value="#{msg['pages.cadastroElenco.documento']}*:" />
-				<p:inputText value="#{elencoManagedBean.elenco.documento}"
-					required="true" label="#{msg['pages.cadastroElenco.documento']}" />
-				<p:outputLabel value="#{msg['pages.cadastroElenco.nome']}*:" />
-				<p:inputText value="#{elencoManagedBean.elenco.nome}" />
-				<p:outputLabel
-					value="#{msg['pages.cadastroElenco.dataNascimento']}*: " />
-				<h:inputText value="#{elencoManagedBean.elenco.dataNascimento}">
-					<f:convertDateTime pattern="dd-MM-yyyy" />
-				</h:inputText>
-				<p:outputLabel for="tipo"
-					value="#{msg['pages.cadastroElenco.tipo']}*: " />
-				<p:selectOneMenu id="tipo" style="width:125px">
-					<f:selectItem itemLabel="#{msg['pages.cadastroElenco.tipo.item1']}"
-						itemValue="" />
-					<f:selectItem itemLabel="#{msg['pages.cadastroElenco.tipo.item2']}"
-						itemValue="#{msg['pages.cadastroElenco.tipo.item2']}" />
-					<f:selectItem itemLabel="#{msg['pages.cadastroElenco.tipo.item3']}"
-						itemValue="#{msg['pages.cadastroElenco.tipo.item3']}" />
-					<f:selectItem itemLabel="#{msg['pages.cadastroElenco.tipo.item4']}"
-						itemValue="#{msg['pages.cadastroElenco.tipo.item4']}" />
-					<f:selectItem itemLabel="#{msg['pages.cadastroElenco.tipo.item5']}"
-						itemValue="#{msg['pages.cadastroElenco.tipo.item5']}" />
-				</p:selectOneMenu>
 				<p:outputLabel for="time"
 					value="#{msg['pages.cadastroElenco.time']}*: " />
 				<p:selectOneMenu id="time" style="width:125px">
 					<f:selectItem itemLabel="#{msg['pages.cadastroElenco.tipo.item1']}"
 						itemValue="" />
-					<f:selectItem itemLabel="#Java Soccers" itemValue="Java Soccers" />
+					<f:selectItem itemLabel="Java Soccers" itemValue="Java Soccers" />
 					<f:selectItem itemLabel="CSharpeiros FC" itemValue="CSharpeiros FC" />
 					<f:selectItem itemLabel="Abutua Team" itemValue="Abutua Team" />
 				</p:selectOneMenu>
+
+				<p:outputLabel value="#{msg['pages.cadastroElenco.documento']}*:" />
+				<p:inputText value="#{elencoManagedBean.elenco.documento}"
+					required="true" label="#{msg['pages.cadastroElenco.documento']}" />
+					
+				<p:outputLabel value="#{msg['pages.cadastroElenco.nome']}*:" />
+				<p:inputText value="#{elencoManagedBean.elenco.nome}" />
+
+				<p:outputLabel for="date"
+					value="#{msg['pages.cadastroElenco.dataNascimento']}*: " />
+				<p:inputMask id="date"
+					value="#{elencoManagedBean.elenco.dataNascimento}"
+					mask="99/99/9999" />
 
 			</p:panelGrid>
 			<p:commandButton value="#{msg['pages.cadastroElenco.btnSalvar']}"
@@ -71,9 +60,6 @@
 			<p:column headerText="#{msg['pages.cadastroElenco.dataNascimento']}">
 				<p:outputLabel value="#{aux.dataNascimento}" />
 			</p:column>
-			<p:column headerText="#{msg['pages.cadastroElenco.tipo']}">
-				<p:outputLabel value="#{aux.tipo}" />
-			</p:column>
 
 			<p:column headerText="#{msg['pages.cadastroElenco.time']}">
 				<p:outputLabel value="#{aux.time}" />
@@ -83,9 +69,3 @@
 
 	</ui:define>
 </ui:composition>
-
-
-
-
-
-

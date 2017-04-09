@@ -27,7 +27,7 @@
  
             <p:panel id="AbutuaSportClub" header="Abutua Sport Club">
                 <h:outputText value="Abutua Sport Club te convoca para a copa dos códigos!" />
-                
+                <br />
                 <h:form>           
 				    <p:growl id="message" showDetail="true" />
 				 
@@ -42,12 +42,11 @@
 				</h:form>
             </p:panel>
             
-            <p:panel id="CTeam" header="Csharpeiros anonimos">
-                <h:outputText value="Csharpeiros anônimos te convoca para a copa dos códigos" />
-                
+            <p:panel id="CTeam" header="Csharp anônimos">
+                <h:outputText value="Csharp anônimos te convoca para a copa dos códigos!" />
                 <h:form>           
 				    <p:growl id="message" showDetail="true" />
-				 
+				 	
 				    <p:commandButton value="Aceitar a inscricao" actionListener="#{dialogView.destroyWorld}" update="message">
 				        <p:confirm header="Confirmation" message="Esta certo?" icon="ui-icon-alert" />
 				    </p:commandButton>
