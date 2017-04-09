@@ -14,7 +14,6 @@ public class TimeManagedBean {
 	private Time time = new Time();
 	private TimeService service = new TimeService();
 	
-	
 	public void salvar()
 	{
 		service.salvar(time);
