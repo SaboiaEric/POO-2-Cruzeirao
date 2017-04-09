@@ -5,6 +5,24 @@ public class Time {
 	private int matricula;
 	private String nome;
 	private String diretor;
+	public String status = "OK";
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Time(String nome){
+		this.nome = nome;
+	}
+	
+	public Time(){
+		
+	}
+	
 	public int getMatricula() {
 		return matricula;
 	}
