@@ -1,4 +1,3 @@
-
 <ui:composition template="templateMenu.xhtml"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -18,88 +17,39 @@
 			<p:outputLabel value="#{msg['pages.cadastroTime.menu']}" />
 		</h1>
 
-		<h:form>
+		<h:form id="formTime">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="#{msg['pages.cadastroTime.matricula']}*:" />
+				<p:inputText value="#{timeManagedBean.time.matricula}"
+					required="true" label="#{msg['pages.cadastroTime.matricula']}" />
 
-			<p:growl id="growl" sticky="true" showDetail="true" />
+				<p:outputLabel value="#{msg['pages.cadastroTime.nome']}*:" />
+				<p:inputText value="#{timeManagedBean.time.nome}" required="true"
+					label="#{msg['pages.cadastroTime.nome']}" />
 
-			<p:wizard flowListener="#{userWizard.onFlowProcess}">
-				<p:tab id="team" title="#{msg['pages.cadastroTime.tab1.title']}">
-					<p:panel header="#{msg['pages.cadastroTime.tab1.header']}">
-						<p:messages />
-						<h:panelGrid columns="2" columnClasses="label, value">
-							<h:outputText value="#{msg['pages.cadastroTime.tab1.item1']}:" />
-							<p:inputText value="#{userWizard.user.clubName}" required="true"
-								label="#{msg['pages.cadastroTime.tab1.item1']}" />
-
-							<h:outputText value="#{msg['pages.cadastroTime.tab1.item2']}:" />
-							<p:inputText value="#{userWizard.user.directorClub}"
-								required="true" label="#{msg['pages.cadastroTime.tab1.item2']}" />
+				<p:outputLabel value="#{msg['pages.cadastroTime.diretor']}*:" />
+				<p:inputText value="#{timeManagedBean.time.diretor}" required="true"
+					label="#{msg['pages.cadastroTime.diretor']}" />
 
 
-							<h:outputText value="#{msg['pages.cadastroTime.tab1.item3']}:" />
-							<h:selectBooleanCheckbox value="#{userWizard.skip}" />
-						</h:panelGrid>
-					</p:panel>
-				</p:tab>
-
-				<p:tab id="address" title="#{msg['pages.cadastroTime.tab2.title']}">
-					<p:panel header="#{msg['pages.cadastroTime.tab2.header']}">
-						<p:messages />
-						<h:panelGrid columns="2" columnClasses="label, value">
-							<h:outputText value="#{msg['pages.cadastroTime.tab2.item1']}:" />
-							<p:inputText value="#{userWizard.user.street}" />
-
-							<h:outputText value="#{msg['pages.cadastroTime.tab2.item2']}:" />
-							<p:inputText value="#{userWizard.user.postalCode}" />
-
-							<h:outputText value="#{msg['pages.cadastroTime.tab2.item3']}:" />
-							<p:inputText value="#{userWizard.user.city}" required="true"
-								label="#{msg['pages.cadastroTime.tab2.item3']}" />
-
-							<h:outputText value="#{msg['pages.cadastroTime.tab2.item4']}:" />
-							<h:selectBooleanCheckbox value="#{userWizard.skip}" />
-						</h:panelGrid>
-					</p:panel>
-				</p:tab>
-
-				<p:tab id="confirm" title="#{msg['pages.cadastroTime.tab3.title']}">
-					<p:panel header="#{msg['pages.cadastroTime.tab3.header']}">
-						<h:panelGrid id="confirmation" columns="3"
-							columnClasses="grid,grid,grid">
-							<h:panelGrid columns="2" columnClasses="label, value">
-								<h:outputText value="#{msg['pages.cadastroTime.tab1.item1']}" />
-								<h:outputText value="#{userWizard.user.clubName}"
-									styleClass="outputLabel" />
-
-								<h:outputText value="#{msg['pages.cadastroTime.tab1.item2']}" />
-								<h:outputText value="#{userWizard.user.directorClub}"
-									styleClass="outputLabel" />
-							</h:panelGrid>
-
-							<h:panelGrid columns="2" columnClasses="label, value">
-								<h:outputText value="#{msg['pages.cadastroTime.tab2.item1']}" />
-								<h:outputText value="#{userWizard.user.street}"
-									styleClass="outputLabel" />
-
-								<h:outputText value="#{msg['pages.cadastroTime.tab2.item2']}" />
-								<h:outputText value="#{userWizard.user.postalCode}"
-									styleClass="outputLabel" />
-
-								<h:outputText value="#{msg['pages.cadastroTime.tab2.item3']}" />
-								<h:outputText value="#{userWizard.user.city}"
-									styleClass="outputLabel" />
-							</h:panelGrid>
-
-						</h:panelGrid>
-
-						<p:commandButton value="#{msg['pages.cadastroTime.submit']}"
-							actionListener="#{userWizard.save}" update="growl"
-							process="@this" styleClass="ui-priority-primary" />
-					</p:panel>
-				</p:tab>
-			</p:wizard>
-
+			</p:panelGrid>
+			<p:commandButton value="#{msg['pages.cadastroTime.btnSalvar']}"
+				action="#{timeManagedBean.salvar}" update=":formTime, :tabelaTime" />
 		</h:form>
+
+		<p:dataTable value="#{timeManagedBean.times}" var="aux"
+			id="tabelaTime">
+			<p:column headerText="#{msg['pages.cadastroTime.matricula']}">
+				<p:outputLabel value="#{aux.matricula}" />
+			</p:column>
+			<p:column headerText="#{msg['pages.cadastroTime.nome']}">
+				<p:outputLabel value="#{aux.nome}" />
+			</p:column>
+			<p:column headerText="#{msg['pages.cadastroTime.diretor']}">
+				<p:outputLabel value="#{aux.diretor}" />
+			</p:column>
+
+		</p:dataTable>
 
 	</ui:define>
 </ui:composition>
