@@ -5,14 +5,14 @@ package sistema.modelos;
 public class Aluno {
 
 
-	private int matricula;
+	private String matricula;
 	private String nome;
 	private String curso;
 	
-	public int getMatricula() {
+	public String getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(int matricula) {
+	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
 	public String getNome() {
