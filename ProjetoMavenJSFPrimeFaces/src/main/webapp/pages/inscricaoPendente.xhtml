@@ -9,13 +9,13 @@
 >
 	
 	<ui:define name="title">
-		<h:outputText value="#{msg['pages.inscricoesPendentes.title']}" />
+		<h:outputText value="#{msg['pages.inscricaoPendente.title']}" />
 	</ui:define>
 	
 
 	<ui:define name="principal">
 	  
-	  <h1><p:outputLabel value="#{msg['pages.inscricoesPendentes.menu']}"/></h1>
+	  <h1><p:outputLabel value="#{msg['pages.inscricaoPendente.menu']}"/></h1>
 
 
 		<div class="ui-fluid">
@@ -34,7 +34,7 @@
 							<h:form>
 								<p:growl id="message" showDetail="true" />
 
-								<p:commandButton value="Aceitar a inscricao"
+								<p:commandButton value="#{msg['pages.inscricaoPendente.aceitar']}"
 									actionListener="#{dialogView.destroyWorld}" update="message">
 									<p:confirm header="Confirmation" message="Esta certo?"
 										icon="ui-icon-alert" />
@@ -56,7 +56,7 @@
 							<h:form>
 								<p:growl id="message" showDetail="true" />
 
-								<p:commandButton value="Aceitar a inscricao"
+								<p:commandButton value="#{msg['pages.inscricaoPendente.aceitar']}"
 									actionListener="#{dialogView.destroyWorld}" update="message">
 									<p:confirm header="Confirmation" message="Esta certo?"
 										icon="ui-icon-alert" />
