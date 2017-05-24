@@ -3,7 +3,6 @@ package sistema.beans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import sistema.modelos.Aluno;
 import sistema.modelos.Juiz;
 import sistema.service.JuizService;
 

@@ -2,6 +2,7 @@ package sistema.modelos;
 
 import java.util.Date;
 
+@SuppressWarnings("unused")
 public class Login {	
 	
 	private String email;

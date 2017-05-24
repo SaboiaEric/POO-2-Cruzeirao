@@ -1,42 +1,91 @@
 package sistema.modelos;
 
-import java.util.Map;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Inscricao {
-	private int registro;
-	private String campeonato;
-	private String categoria;
-	private String time;
-	private Map<Elenco,TipoElenco> jogadores;
-	public int getRegistro() {
-		return registro;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+@Entity
+public class Inscricao implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long numero;
+	private boolean pagamento;
+	private boolean validada;
+	
+	@OneToMany(mappedBy="inscricao")
+	private ArrayList<Inscrito> inscritos = new ArrayList<Inscrito>();
+	
+	@ManyToOne
+	private Categoria categoria;
+	
+	@OneToMany
+	private ArrayList<Partida> partidas = new ArrayList<Partida>();
+	
+	@ManyToOne
+	private Equipe equipe;
+
+
+	public long getNumero() {
+		return numero;
 	}
-	public void setRegistro(int registro) {
-		this.registro = registro;
+
+	public void setNumero(long numero) {
+		this.numero = numero;
 	}
-	public String getCampeonato() {
-		return campeonato;
+
+	public boolean isPagamento() {
+		return pagamento;
 	}
-	public void setCampeonato(String campeonato) {
-		this.campeonato = campeonato;
+
+	public void setPagamento(boolean pagamento) {
+		this.pagamento = pagamento;
 	}
-	public String getCategoria() {
+
+	public boolean isValidada() {
+		return validada;
+	}
+
+	public void setValidada(boolean validada) {
+		this.validada = validada;
+	}
+
+	public ArrayList<Inscrito> getInscritos() {
+		return inscritos;
+	}
+
+	public void setInscritos(ArrayList<Inscrito> inscritos) {
+		this.inscritos = inscritos;
+	}
+
+	public Categoria getCategoria() {
 		return categoria;
 	}
-	public void setCategoria(String categoria) {
+
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	public String getTime() {
-		return time;
+
+	public ArrayList<Partida> getPartidas() {
+		return partidas;
 	}
-	public void setTime(String time) {
-		this.time = time;
+
+	public void setPartidas(ArrayList<Partida> partidas) {
+		this.partidas = partidas;
 	}
-	public Map<Elenco, TipoElenco> getJogadores() {
-		return jogadores;
+
+	public Equipe getEquipe() {
+		return equipe;
 	}
-	public void setJogadores(Map<Elenco, TipoElenco> jogadores) {
-		this.jogadores = jogadores;
+
+	public void setEquipe(Equipe equipe) {
+		this.equipe = equipe;
 	}
-	
+
 }

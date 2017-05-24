@@ -1,30 +1,38 @@
 package sistema.modelos;
 
-public class Juiz {
-	
-	private String nome;
-	private String email;
-	private String rg;
-	
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getRg() {
-		return rg;
-	}
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
-	
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Juiz implements Serializable {
+	private static final long serialVersionUID = 1L;
+	// TODO private ENUM tipo
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int codigoJuiz;
+	//TODO private ENum TIPO;
+	private Usuario usuario;
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public int getCodigoJuiz() {
+		return codigoJuiz;
+	}
+
+	public void setCodigoJuiz(int codigoJuiz) {
+		this.codigoJuiz = codigoJuiz;
+	}
+	
+	
 }
