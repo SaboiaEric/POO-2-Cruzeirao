@@ -21,12 +21,11 @@ public class Campeonato implements Serializable{
 	private int codigoCampeonato;
 	
 	private String nome;
+	private int ano;
 	@OneToMany
 	private ArrayList<Local> locais = new ArrayList<Local>();
 	@OneToMany
 	private ArrayList<Juiz> juizes= new ArrayList<Juiz>();
-	@OneToMany(mappedBy="campeonato")
-	private ArrayList<Categoria> categorias= new ArrayList<Categoria>();
 	@Temporal(TemporalType.DATE)
 	private Date  dataInicioInscricao;
 	@Temporal(TemporalType.DATE)
@@ -36,6 +35,9 @@ public class Campeonato implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date dataFimCampeonato;
 	private double valorTaxa;
+	private int minJogadores;
+	private int maxJogadores;
+	private int minTimeCat;
 	
 	
 	public String getNome() {
@@ -43,6 +45,12 @@ public class Campeonato implements Serializable{
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public int getAno() {
+		return ano;
+	}
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 	public ArrayList<Local> getLocais() {
 		return locais;
@@ -55,12 +63,6 @@ public class Campeonato implements Serializable{
 	}
 	public void setJuizes(ArrayList<Juiz> juizes) {
 		this.juizes = juizes;
-	}
-	public ArrayList<Categoria> getCategorias() {
-		return categorias;
-	}
-	public void setCategorias(ArrayList<Categoria> categorias) {
-		this.categorias = categorias;
 	}
 	public Date getDataInicioInscricao() {
 		return dataInicioInscricao;
@@ -97,5 +99,23 @@ public class Campeonato implements Serializable{
 	}
 	public void setCodigoCampeonato(int codigoCampeonato) {
 		this.codigoCampeonato = codigoCampeonato;
+	}
+	public int getMinJogadores() {
+		return minJogadores;
+	}
+	public void setMinJogadores(int minJogadores) {
+		this.minJogadores = minJogadores;
+	}
+	public int getMaxJogadores() {
+		return maxJogadores;
+	}
+	public void setMaxJogadores(int maxJogadores) {
+		this.maxJogadores = maxJogadores;
+	}
+	public int getMinTimeCat() {
+		return minTimeCat;
+	}
+	public void setMinTimeCat(int minTimeCat) {
+		this.minTimeCat = minTimeCat;
 	}	
 }

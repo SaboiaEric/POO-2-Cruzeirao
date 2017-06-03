@@ -20,17 +20,17 @@
 	  <p:panelGrid columns="2">
       
 	  <p:outputLabel value="#{msg['pages.cadastroCategoria.nome']}" />
-      <p:inputText value="#{categoriaManagedBean.catergoria.nome}"/>
+      <p:inputText value="#{CategoriaMB.categoria.nome}"/>
 	  
 	  <p:outputLabel value="#{msg['pages.cadastroCategoria.idadeMin']}" />
-      <p:inputText value="#{categoriaManagedBean.catergoria.idadeMin}"/>
+      <p:inputText value="#{CategoriaMB.categoria.idadeMin}"/>
 	  
       <p:outputLabel value="#{msg['pages.cadastroCategoria.genero']}" />
-      <p:inputText value="#{categoriaManagedBean.catergoria.genero}"/>
+      <p:inputText value="#{CategoriaMB.categoria.genero}"/>
 	  
 	  </p:panelGrid>
 	  <p:commandButton value="#{msg['pages.cadastroCategoria.btnSalvar']}" 
-	                 action="#{categoriaManagedBean.salvar}"
+	                 action="#{CategoriaMB.envia}"
 	                 update=":formCatergoria, :tabelaCatergoria"
 	                 />
        </h:form>

@@ -7,9 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
 import sistema.enums.Sexo;
 
 @Entity
@@ -20,71 +17,33 @@ public class Categoria implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigoCategoria;
 	private String nome;
-	private int nascidosApartirDe;
+	private int idadeMin;
 	
-	@OneToMany(mappedBy="categoria")
-	private ArrayList<Inscricao> inscricoes= new ArrayList<Inscricao>();
-	@ManyToOne
-	private Campeonato campeonato;
-	
-	@OneToMany(mappedBy="categoria")
-	private ArrayList<Fase> fases =  new ArrayList<Fase>();;
-	
-	private int minJogadores;
-	private int maxJogadores;
-	private Sexo sexo; 
-
+	public int getCodigoCategoria() {
+		return codigoCategoria;
+	}
+	public void setCodigoCategoria(int codigoCategoria) {
+		this.codigoCategoria = codigoCategoria;
+	}
 	public String getNome() {
 		return nome;
 	}
-
-	public Sexo getSexo() {
-		return sexo;
-	}
-	public void setSexo(Sexo sexo) {
-		this.sexo = sexo;
-	}
-
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getNascidosApartirDe() {
-		return nascidosApartirDe;
+	public int getIdadeMin() {
+		return idadeMin;
 	}
-	public void setNascidosApartirDe(int nascidosApartirDe) {
-		this.nascidosApartirDe = nascidosApartirDe;
+	public void setIdadeMin(int idadeMin) {
+		this.idadeMin = idadeMin;
 	}
-	public ArrayList<Inscricao> getInscricoes() {
-		return inscricoes;
+	public Sexo getGenero() {
+		return genero;
 	}
-	public void setInscricoes(ArrayList<Inscricao> inscricoes) {
-		this.inscricoes = inscricoes;
+	public void setGenero(Sexo genero) {
+		this.genero = genero;
 	}
-	public Campeonato getCampeonato() {
-		return campeonato;
-	}
-	public void setCampeonato(Campeonato campeonato) {
-		this.campeonato = campeonato;
-	}
-	public ArrayList<Fase> getFases() {
-		return fases;
-	}
-	public void setFases(ArrayList<Fase> fases) {
-		this.fases = fases;
-	}
-	public int getMinJogadores() {
-		return minJogadores;
-	}
-	public void setMinJogadores(int minJogadores) {
-		this.minJogadores = minJogadores;
-	}
-	public int getMaxJogadores() {
-		return maxJogadores;
-	}
-	public void setMaxJogadores(int maxJogadores) {
-		this.maxJogadores = maxJogadores;
-	}
-	
-	
+	private Sexo genero; 
+
+
 }

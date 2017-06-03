@@ -20,39 +20,39 @@
 	  <p:panelGrid columns="2">
       
       <p:outputLabel value="#{msg['pages.cadastroCampeonato.nome']}" />
-      <p:inputText value="#{campeonatoManagedBean.campeonato.nome}"/>
+      <p:inputText value="#{CampeonatoMB.campeonato.nome}"/>
 	  
 	  <p:outputLabel value="#{msg['pages.cadastroCampeonato.ano']}" />
-	  <p:inputText value="#{campeonatoManagedBean.campeonato.ano}"/>
+	  <p:inputText value="#{CampeonatoMB.campeonato.ano}"/>
       
       <p:outputLabel for="dataInicio" value="#{msg['pages.cadastroCampeonato.dataInicio']}" />
-      <p:calendar id="dataInicio" value="#{campeonatoManagedBean.campeonato.dataInicio}" showOn="button" />
+      <p:calendar id="dataInicio" value="#{CampeonatoMB.campeonato.dataInicioCampeonato}" showOn="button" />
 	  
 	  <p:outputLabel for="dataFim" value="#{msg['pages.cadastroCampeonato.dataFim']}" />
-      <p:calendar id="dataFim" value="#{campeonatoManagedBean.campeonato.dataFim}" showOn="button"/>
+      <p:calendar id="dataFim" value="#{CampeonatoMB.campeonato.dataFimCampeonato}" showOn="button"/>
 	  	    
 	  <p:outputLabel for="inscInicio" value="#{msg['pages.cadastroCampeonato.inscInicio']}" />
-      <p:calendar id="inscInicio" value="#{campeonatoManagedBean.campeonato.inscInicio}" showOn="button"/>
+      <p:calendar id="inscInicio" value="#{CampeonatoMB.campeonato.dataInicioInscricao}" showOn="button"/>
 	  
 	  <p:outputLabel for="inscFim" value="#{msg['pages.cadastroCampeonato.inscFim']}" />
-      <p:calendar id="inscFim" value="#{campeonatoManagedBean.campeonato.inscFim}" showOn="button"/>
+      <p:calendar id="inscFim" value="#{CampeonatoMB.campeonato.dataFimFimInscricao}" showOn="button"/>
       
       <p:outputLabel value="#{msg['pages.cadastroCampeonato.valor']}" />
-      <p:inputText value="#{campeonatoManagedBean.campeonato.valor}"/>
+      <p:inputText value="#{CampeonatoMB.campeonato.valorTaxa}"/>
 	  
 	  <p:outputLabel value="#{msg['pages.cadastroCampeonato.minJogadores']}" />
-      <p:inputText value="#{campeonatoManagedBean.campeonato.minJogadores}"/>
+      <p:inputText value="#{CampeonatoMB.campeonato.minJogadores}"/>
       
       <p:outputLabel value="#{msg['pages.cadastroCampeonato.maxJogadores']}" />
-      <p:inputText value="#{campeonatoManagedBean.campeonato.maxJogadores}"/>
+      <p:inputText value="#{CampeonatoMB.campeonato.maxJogadores}"/>
       
       <p:outputLabel value="#{msg['pages.cadastroCampeonato.minTimeCat']}" />
-      <p:inputText value="#{campeonatoManagedBean.campeonato.minTimeCat}"/>
+      <p:inputText value="#{CampeonatoMB.campeonato.minTimeCat}"/>
 	  	    
 	  </p:panelGrid>
 	  <br/>
 	  <p:commandButton value="#{msg['pages.cadastroCampeonato.btnSalvar']}" 
-	                   action="#{campeonatoManagedBean.salvar}"
+	                   action="#{CampeonatoMB.envia}"
 	                   update=":formCampeonato, :tabelaCampeonato"/>
       </h:form>
 	  <br/>
