@@ -17,9 +17,8 @@ public class InscricaoManagedBean {
 	
 	public void salvar()
 	{
-		service.salvar(inscricao);
+		service.save(inscricao);
 		inscricao = new Inscricao();
-		
 	}
 
 	public Inscricao getInscricao() {

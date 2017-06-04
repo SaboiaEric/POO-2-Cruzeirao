@@ -16,7 +16,7 @@ public class UsuarioService {
 		return usuario;
 	}
 
-	public List <Usuario> getLocals()
+	public List <Usuario> getUsuarios()
 	{
 		List <Usuario> list =  usuarioDAO.getAll(Usuario.class);
 		usuarioDAO.closeEntityManager();

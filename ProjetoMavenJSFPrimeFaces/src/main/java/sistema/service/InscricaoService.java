@@ -1,30 +1,41 @@
 package sistema.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import sistema.modelos.Inscricao;;
+import sistema.DAO.InscricaoDAO;
+import sistema.modelos.Inscricao;
+
 
 public class InscricaoService {
+	
+	InscricaoDAO inscricaoDAO = new InscricaoDAO();
 
-	private ArrayList <Inscricao> incricoes = new ArrayList<Inscricao>();
-	
-	public InscricaoService()
-	{
-
+	public Inscricao save(Inscricao inscricao ){
+		
+		inscricao  = inscricaoDAO.salvar(inscricao );
+		inscricaoDAO.closeEntityManager();
+		return inscricao ;
 	}
-	
-	public void salvar(Inscricao inscricao)
-	{
-	    incricoes.add(inscricao);
-	}
-	
 
 	public List <Inscricao> getInscricoes()
 	{
-		
-		return incricoes;
-		
+		List <Inscricao> list =  inscricaoDAO.getAll(Inscricao.class);
+		inscricaoDAO.closeEntityManager();
+		return list;
 	}
-	
-	
+	public void update(Inscricao inscricao)
+	{
+		inscricaoDAO.salvar(inscricao);
+		inscricaoDAO.closeEntityManager();
+	}
+	public void remove(Inscricao inscricao )
+	{
+		try{
+		inscricao = inscricaoDAO.getById(Inscricao.class, (int)inscricao.getNumero());
+		inscricaoDAO.remover(inscricao );
+		inscricaoDAO.closeEntityManager();
+		}
+		catch(Exception e){
+			System.out.println("Erro ao tentar remover a inscrição" + inscricao.getNumero());
+		}
+	}
 }
