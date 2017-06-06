@@ -1,0 +1,54 @@
+<ui:composition template="templateMenu.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui2="http://java.sun.com/jsf/facelets"
+>
+	
+	<ui:define name="title">
+		<h:outputText value="#{msg['pages.novoUsuario.title']}" />
+	</ui:define>
+	
+
+	<ui:define name="principal">
+	  
+	  
+	  
+	  
+	  <h1><p:outputLabel value="#{msg['pages.novoUsuario.menu']}"/></h1>
+	  
+	  
+	  <h:form id="formNovoUsuario">	
+	  
+	  <p:messages id="messages" />
+              <p:panelGrid columns="2">
+                    <p:outputLabel for="nomeUsuario" value="Nome Usuário:" />
+                    <p:inputText id="nomeUsuario" value="#{LoginMB.usuario.nomeUsuario}" />
+                    
+                    <p:outputLabel for="senha" value="Senha:" />
+                    <p:password id="senha" value="#{LoginMB.usuario.senha}" />
+                    
+                    <p:commandButton value="Enviar" icon="ui-icon-star" action="#{LoginMB.envia}" ajax="false">
+                    </p:commandButton>
+   
+              </p:panelGrid>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+      </h:form>
+	
+	
+	
+	   
+	</ui:define>
+</ui:composition>

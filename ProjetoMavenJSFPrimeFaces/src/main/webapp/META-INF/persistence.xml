@@ -16,6 +16,7 @@
 		<class>sistema.modelos.Rodada</class>
 		<class>sistema.modelos.Time</class>
 		<class>sistema.modelos.Usuario</class>
+		<class>sistema.modelos.UsuarioTeste</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="create-tables"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/Cruzeirao;create=true"/>
