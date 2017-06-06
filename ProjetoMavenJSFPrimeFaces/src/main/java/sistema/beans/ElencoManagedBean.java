@@ -33,9 +33,4 @@ public class ElencoManagedBean {
 	public List<Elenco> getElencos() {
 		return service.getElencos();
 	}
-
-	
-	
-	
-
 }
