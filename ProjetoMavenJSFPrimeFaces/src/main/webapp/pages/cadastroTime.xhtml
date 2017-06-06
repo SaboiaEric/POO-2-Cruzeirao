@@ -26,6 +26,9 @@
 				<p:outputLabel value="#{msg['pages.cadastroTime.diretor']}*:" />
 				<p:inputText value="#{equipeManagedBean.equipe.cidade}" required="true"
 					label="#{msg['pages.cadastroTime.diretor']}" />
+					
+				<p:outputLabel for="dataInicio" value="Data de Fundação" />
+      			<p:calendar id="dataInicio" value="#{equipeManagedBean.equipe.dataFundacao}" showOn="button" />
 
 
 			</p:panelGrid>
