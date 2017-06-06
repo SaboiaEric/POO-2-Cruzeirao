@@ -20,36 +20,68 @@
 	  <h1><p:outputLabel value="#{msg['pages.novoUsuario.menu']}"/></h1>
 	  
 	  
-	  <h:form id="formCadastro">	
+	  <h:form id="formNovoUsuario">	
 	  
 	  <p:panelGrid columns="2">
       <p:outputLabel value="#{msg['pages.novoUsuario.nome']}" />
-      <p:inputText />
-      
-      <p:outputLabel value="#{msg['pages.novoUsuario.sobrenome']}" />
-      <p:inputText />
-      
+      <p:inputText value="#{usuarioManagedBean.usuario.nome}"
+		required="true" label="#{msg['pages.novoUsuario.nome']}"/>      
+          
       <p:outputLabel value="#{msg['pages.novoUsuario.nascimento']}" /> 
-      <p:inputText />
+      <p:calendar id="nascimento" value="#{usuarioManagedBean.usuario.dataNasimento}" showOn="button" />
       
       <p:outputLabel value="#{msg['pages.novoUsuario.cpf']}" />
-      <p:inputText />
+      <p:inputText value="#{usuarioManagedBean.usuario.cpf}"
+		required="true" label="#{msg['pages.novoUsuario.cpf']}" />
       
+      <p:outputLabel value="#{msg['pages.novoUsuario.rg']}" />
+      <p:inputText value="#{usuarioManagedBean.usuario.rg}"
+		required="true" label="#{msg['pages.novoUsuario.rg']}" />
+      
+        <p:outputLabel value="#{msg['pages.novoUsuario.cref']}" />
+      <p:inputText value="#{usuarioManagedBean.usuario.cref}"
+		 label="#{msg['pages.novoUsuario.cref']}" />   
+		 
+		 
+		 
+					
+					
+		 
+		 
+      
+        <p:outputLabel value="#{msg['pages.novoUsuario.endereco']}" />
+      <p:inputText value="#{usuarioManagedBean.usuario.endereco}"
+		required="true" label="#{msg['pages.novoUsuario.endereco']}"/>  
+      
+      <p:outputLabel value="#{msg['pages.novoUsuario.telefoneFixo']}" />
+      <p:inputText value="#{usuarioManagedBean.usuario.telefoneFixo}"
+		required="true" label="#{msg['pages.novoUsuario.telefoneFixo']}" />  
+      
+      <p:outputLabel value="#{msg['pages.novoUsuario.telefoneMovel']}" />
+      <p:inputText value="#{usuarioManagedBean.usuario.telefoneMovel}"
+		required="true" label="#{msg['pages.novoUsuario.telefoneMovel']}"/>      
+      
+          
       <p:outputLabel value="#{msg['pages.novoUsuario.email']}" />
-      <p:inputText />
+      <p:inputText value="#{usuarioManagedBean.usuario.email}"
+		required="true" label="#{msg['pages.novoUsuario.email']}"/>
       
-      <p:outputLabel value="#{msg['pages.novoUsuario.senha']}" />
-      <p:inputText />       
+       <p:outputLabel value="#{msg['pages.novoUsuario.senha']}" />
+      <p:inputText value="#{usuarioManagedBean.usuario.senha}"
+		required="true" label="#{msg['pages.novoUsuario.senha']}"/>
+      
+           
        
       <p:outputLabel value="#{msg['pages.novoUsuario.genero']}" />     
-        <p:selectOneRadio > 
+        <p:selectOneRadio id="genero" value="#{usuarioManagedBean.usuario.sexo}"> 
            <f:selectItem  itemLabel="#{msg['pages.novoUsuario.masculino']}" />
            <f:selectItem itemLabel="#{msg['pages.novoUsuario.feminino']}" />            
         </p:selectOneRadio>        
       </p:panelGrid>
       
            
-	  <p:commandButton value="#{msg['pages.novoUsuario.btnCadastrar']}" />
+	  <p:commandButton value="#{msg['pages.novoUsuario.btnCadastrar']}" 
+	  action="#{usuarioManagedBean.salvar}" />
 	  
       </h:form>
 	

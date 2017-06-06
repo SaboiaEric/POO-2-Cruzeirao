@@ -24,6 +24,15 @@ public class Usuario implements Serializable {
 	private int codigoUsuario;
 	private String email;
 	private String nome;
+	private String senha;
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
 	@Temporal(TemporalType.DATE)
 	private Date dataNasimento;
