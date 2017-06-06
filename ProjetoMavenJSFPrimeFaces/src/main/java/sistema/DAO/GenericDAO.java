@@ -21,7 +21,7 @@ public abstract class GenericDAO<T, I extends Serializable> {
 
 	public GenericDAO() {
 		if (emf == null)
-			emf = Persistence.createEntityManagerFactory("Cruzeirao");
+			emf = Persistence.createEntityManagerFactory("ProjetoMavenJSFPrimeFacesComJPA");
 		
 		em = emf.createEntityManager();
 	}
