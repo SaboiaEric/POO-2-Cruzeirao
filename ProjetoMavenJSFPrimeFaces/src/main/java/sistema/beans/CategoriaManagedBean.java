@@ -3,7 +3,7 @@ package sistema.beans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import sistema.dao.CategoriaDAO;
+import sistema.DAO.CategoriaDAO;
 import sistema.modelos.Categoria;
 
 @ManagedBean(name = "CategoriaMB")

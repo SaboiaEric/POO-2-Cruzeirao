@@ -1,4 +1,4 @@
-package sistema.dao;
+package sistema.DAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

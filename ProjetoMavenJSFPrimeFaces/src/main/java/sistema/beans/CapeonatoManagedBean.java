@@ -3,7 +3,7 @@ package sistema.beans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import sistema.dao.CampeonatoDAO;
+import sistema.DAO.CampeonatoDAO;
 import sistema.modelos.Campeonato;
 
 @ManagedBean(name = "CampeonatoMB")
