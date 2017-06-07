@@ -9,7 +9,7 @@ import sistema.modelos.Equipe;
 import sistema.service.EquipeService;;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class EquipeManagedBean {
 	
 	private Equipe equipe = new Equipe();
@@ -33,5 +33,4 @@ public class EquipeManagedBean {
 	public List<Equipe> getEquipes() {
 		return service.getList();
 	}
-
 }
