@@ -32,9 +32,4 @@ public class InscricaoManagedBean {
 	public List<Inscricao> getInscricoes() {
 		return service.getInscricoes();
 	}
-
-	
-	
-	
-
 }

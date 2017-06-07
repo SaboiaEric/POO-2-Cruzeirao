@@ -2,6 +2,7 @@ package sistema.modelos;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,13 +21,13 @@ public class Inscricao implements Serializable {
 	private boolean validada;
 	
 	@OneToMany(mappedBy="inscricao")
-	private ArrayList<Inscrito> inscritos = new ArrayList<Inscrito>();
+	private List<Inscrito> inscritos = new ArrayList<Inscrito>();
 	
 	@ManyToOne
 	private Categoria categoria;
 	
 	@OneToMany
-	private ArrayList<Partida> partidas = new ArrayList<Partida>();
+	private List<Partida> partidas = new ArrayList<Partida>();
 	
 	@ManyToOne
 	private Equipe equipe;
@@ -56,7 +57,7 @@ public class Inscricao implements Serializable {
 		this.validada = validada;
 	}
 
-	public ArrayList<Inscrito> getInscritos() {
+	public List<Inscrito> getInscritos() {
 		return inscritos;
 	}
 
@@ -72,7 +73,7 @@ public class Inscricao implements Serializable {
 		this.categoria = categoria;
 	}
 
-	public ArrayList<Partida> getPartidas() {
+	public List<Partida> getPartidas() {
 		return partidas;
 	}
 
