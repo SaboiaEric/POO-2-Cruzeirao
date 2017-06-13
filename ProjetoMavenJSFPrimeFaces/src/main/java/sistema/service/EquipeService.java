@@ -10,7 +10,6 @@ public class EquipeService {
 	EquipeDAO objectDAO = new EquipeDAO();
 
 	public Equipe save(Equipe obj){
-		
 		obj = objectDAO.salvar(obj);
 		objectDAO.closeEntityManager();
 		return obj ;
