@@ -10,7 +10,7 @@ import sistema.modelos.Categoria;
 public class CategoriaDAO extends GenericDAO<Categoria,Integer>{
 
 	 private EntityManagerFactory factory = Persistence
-             .createEntityManagerFactory("categoria");
+             .createEntityManagerFactory("ProjetoMavenJSFPrimeFacesComJPA");
      private EntityManager em = factory.createEntityManager();
 
  	 public Categoria getCategoria(String nomeCategoria) {
