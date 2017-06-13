@@ -30,12 +30,12 @@
 	  
 	  </p:panelGrid>
 	  <p:commandButton value="#{msg['pages.cadastroCategoria.btnSalvar']}" 
-	                 action="#{CategoriaMB.envia}"
+	                 action="#{CategoriaMB.salvar}"
 	                 update=":formCatergoria, :tabelaCatergoria"
 	                 />
        </h:form>
 	
-   <p:dataTable value="#{categoriaManagedBean.catergorias}"
+   <p:dataTable value="#{CategoriaMB.categoria}"
                 var="aux"
                 id="tabelaCatergoria"
    >
