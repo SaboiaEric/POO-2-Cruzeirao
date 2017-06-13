@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
 import sistema.modelos.Categoria;
 import sistema.service.CategoriaService;
 
-@ManagedBean(name = "CategoriaMB")
+@ManagedBean
 @SessionScoped
 public class CategoriaManagedBean {
 
