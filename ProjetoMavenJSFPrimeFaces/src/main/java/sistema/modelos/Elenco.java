@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Elenco {
 
-
+	private int id;
 	private String documento;
 	private String nome;
 	private Date dataNascimento;
@@ -12,6 +12,15 @@ public class Elenco {
 	public String getDocumento() {
 		return documento;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public void setDocumento(String documento) {
 		this.documento = documento;
 	}

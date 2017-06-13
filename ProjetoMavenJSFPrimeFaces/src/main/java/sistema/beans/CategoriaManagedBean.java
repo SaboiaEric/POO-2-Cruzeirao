@@ -1,34 +1,43 @@
 package sistema.beans;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
-import sistema.DAO.CategoriaDAO;
 import sistema.modelos.Categoria;
+import sistema.service.CategoriaService;
 
-@ManagedBean(name = "CategoriaMB")
-@ViewScoped
+@ManagedBean
+@SessionScoped
 public class CategoriaManagedBean {
 
-	private CategoriaDAO categoriaDAO = new CategoriaDAO();
-    private Categoria categoria = new Categoria();
-    
-    public String envia() {
-          
-          categoria = categoriaDAO.getCategoria(categoria.getNome());
-          if (categoria == null) {
-                categoria = new Categoria();
-                return null;
-          } else {
-                return "/main";
-          }
-    }
+	private Categoria categoria = new Categoria();
+	private CategoriaService service = new CategoriaService();
 
-    public Categoria getCategoria() {
-          return categoria;
-    }
+	public Categoria getCategoria() {
+		return categoria;
+	}
 
-    public void setCategoria(Categoria categoria) {
-          this.categoria = categoria;
-    }
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public CategoriaService getService() {
+		return service;
+	}
+
+	public void setService(CategoriaService service) {
+		this.service = service;
+	}
+
+	public void salvar() {
+		service.save(categoria);
+		categoria = new Categoria();
+
+	}
+	
+	public List<Categoria> getCategorias() {
+		return service.getList();
+	}
 }

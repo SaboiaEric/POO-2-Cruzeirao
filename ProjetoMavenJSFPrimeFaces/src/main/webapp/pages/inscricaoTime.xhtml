@@ -20,12 +20,20 @@
 		<div class="ui-fluid">
 			<h:form id="formInscricao">
 				<fieldset>
-					<legend>Dados da Equipe</legend>
+					<legend>Dados da Equipe </legend>
 					<h:outputLabel value="Selecione Equipe:" for="equipe" />
 					<h:selectOneMenu value="#{equipeManagedBean.equipe.codigoEquipe}">
 						<f:selectItems value="#{equipeManagedBean.equipes}" var="equipe" 
 							itemLabel="#{equipe.nome}" itemValue="#{equipe.codigoEquipe}" />
+					</h:selectOneMenu>					
+					<br/>
+					<h:outputLabel value="Selecione Categoria:" for="categoria" />
+					<h:selectOneMenu value="#{CategoriaMB.categoria.codigoCategoria}">
+						<f:selectItems value="#{CategoriaMB.categorias}" var="categoria" 
+							itemLabel="#{categoria.nome}" itemValue="#{categoria.codigoCategoria}" />
 					</h:selectOneMenu>
+					
+					<br/>
 					<h:commandButton value="Gravar Equipe" />
 
 				</fieldset>
@@ -54,7 +62,7 @@
 			</h:form>
 
 			<h:form id="formInscricaoEquipe">
-				<!-- <p:panel id="painelTimeEquipe"
+				<p:panel id="painelTimeEquipe"
 					header="#{msg['pages.inscricaoTime.submenu2']}"
 					style="margin-bottom:10px;">
 					<p:panelGrid columns="4">
@@ -114,7 +122,7 @@
 
 					</p:dataTable>
 				</p:outputPanel>
- -->			</h:form>
+			</h:form>
 		</div>
 
 

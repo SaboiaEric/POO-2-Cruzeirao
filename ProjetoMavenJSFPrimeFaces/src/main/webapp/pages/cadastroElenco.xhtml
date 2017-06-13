@@ -19,7 +19,7 @@
 		</h1>
 
 		<h:form id="formElenco">
-			<p:panelGrid columns="2">
+<!-- 			<p:panelGrid columns="2">
 				<p:outputLabel value="#{msg['pages.cadastroElenco.time']}*: " />
 				<p:selectOneMenu id="time" style="width:125px">
 					<f:selectItem itemLabel="#{msg['pages.cadastroElenco.opcaoTime']}"
@@ -52,10 +52,10 @@
 			</p:panelGrid>
 			<p:commandButton value="#{msg['pages.cadastroElenco.btnSalvar']}"
 				action="#{elencoManagedBean.salvar}"
-				update=":formElenco, :tabelaElenco" />
+				update=":formElenco, :tabelaElenco" /> -->
 		</h:form>
 
-		<p:dataTable value="#{elencoManagedBean.elencos}" var="aux"
+	<!-- 	<p:dataTable value="#{elencoManagedBean.elencos}" var="aux"
 			id="tabelaElenco">
 			<p:column headerText="#{msg['pages.cadastroElenco.documento']}">
 				<p:outputLabel value="#{aux.documento}" />
@@ -71,6 +71,6 @@
 			</p:column>
 
 		</p:dataTable>
-
+ -->
 	</ui:define>
 </ui:composition>

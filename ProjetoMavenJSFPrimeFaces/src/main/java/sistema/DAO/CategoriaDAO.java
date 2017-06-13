@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 
 import sistema.modelos.Categoria;
 
-public class CategoriaDAO {
+public class CategoriaDAO extends GenericDAO<Categoria,Integer>{
 
 	 private EntityManagerFactory factory = Persistence
              .createEntityManagerFactory("categoria");
@@ -35,5 +35,12 @@ public class CategoriaDAO {
              e.printStackTrace();
              return false;
        }
-     }  
-}
+     }
+
+	@Override
+	protected Class<Categoria> getClasseEntidade() {
+		// TODO Auto-generated method stub
+		return null;
+	}  
+ 	 
+ }
