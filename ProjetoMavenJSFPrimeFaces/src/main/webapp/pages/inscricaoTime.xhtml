@@ -17,111 +17,109 @@
 			<p:outputLabel value="#{msg['pages.inscricaoTime.menu']}" />
 		</h1>
 
+
+
 		<div class="ui-fluid">
 			<h:form id="formInscricao">
-				<fieldset>
-					<legend>Dados da Equipe </legend>
-					<h:outputLabel value="Selecione Equipe:" for="equipe" />
-					<h:selectOneMenu value="#{equipeManagedBean.equipe.codigoEquipe}">
-						<f:selectItems value="#{equipeManagedBean.equipes}" var="equipe" 
-							itemLabel="#{equipe.nome}" itemValue="#{equipe.codigoEquipe}" />
-					</h:selectOneMenu>					
-					<br/>
-					<h:outputLabel value="Selecione Categoria:" for="categoria" />
-					<h:selectOneMenu value="#{CategoriaMB.categoria.codigoCategoria}">
-						<f:selectItems value="#{CategoriaMB.categorias}" var="categoria" 
-							itemLabel="#{categoria.nome}" itemValue="#{categoria.codigoCategoria}" />
-					</h:selectOneMenu>
-					
-					<br/>
-					<h:commandButton value="Gravar Equipe" />
+				<div class="ui-g">
+					<div class="ui-g-12">
+						<p:panel id="painelElencoFinanceiro" header="Financeiro"
+							style="margin-bottom:10px;">
 
-				</fieldset>
-				<!-- <p:panelGrid columns="8">
-					<p:outputLabel value="#{msg['pages.inscricaoTime.categoria']}*: " />
-					<p:selectOneMenu id="categoria" style="width:125px">
-						<f:selectItem itemLabel="#{msg['pages.inscricaoTime.opcao']}"
-							itemValue="" />
-						<f:selectItem itemLabel="Veterano" itemValue="Veterano" />
-						<f:selectItem itemLabel="Sub-17" itemValue="Sub-17" />
-						<f:selectItem itemLabel="Adulto" itemValue="Adulto" />
-					</p:selectOneMenu>
 
-					<p:outputLabel value="#{msg['pages.inscricaoTime.time']}*: " />
-					<p:selectOneMenu id="time" style="width:125px">
-						<f:selectItem itemLabel="#{msg['pages.inscricaoTime.opcao']}"
-							itemValue="" />
-						<f:selectItem itemLabel="Java Soccers" itemValue="Java Soccers" />
-						<f:selectItem itemLabel="CSharpeiros FC"
-							itemValue="CSharpeiros FC" />
-						<f:selectItem itemLabel="Abutua Team" itemValue="Abutua Team" />
-					</p:selectOneMenu>
+						</p:panel>
+					</div>
+					<div class="ui-g-4">
+						<p:panel id="painelInscricaoTime"
+							header="Painel de inscrição da equipe"
+							style="margin-bottom:10px;">
+							<p:panelGrid columns="2">
+								<h:outputLabel value="Selecione Equipe:" for="equipe" />
+								<h:selectOneMenu
+									value="#{equipeManagedBean.equipe.codigoEquipe}"
+									style="width:100%;" required="true">
+									<f:selectItems value="#{equipeManagedBean.equipes}"
+										var="equipe" itemLabel="#{equipe.nome}"
+										itemValue="#{equipe.codigoEquipe}" />
+								</h:selectOneMenu>
+								<h:outputLabel value="Selecione Categoria:" for="categoria" />
+								<h:selectOneMenu
+									value="#{CategoriaMB.categoria.codigoCategoria}"
+									style="width:100%;" required="true">
+									<f:selectItems value="#{CategoriaMB.categorias}"
+										var="categoria" itemLabel="#{categoria.nome}"
+										itemValue="#{categoria.codigoCategoria}" />
+								</h:selectOneMenu>
+							</p:panelGrid>
+						</p:panel>
+					</div>
+					<div class="ui-g-6">
+						<p:panel id="painelElencoTime"
+							header="#{msg['pages.inscricaoTime.submenu2']}"
+							style="margin-bottom:10px;">
+							<p:panelGrid columns="4">
+								<h:outputLabel value="Usuario " for="usuario" />
+								<h:selectOneMenu
+									value="#{usuarioManagedBean.usuario.codigoUsuario}"
+									style="width:100%;" required="true">
+									<f:selectItems value="#{usuarioManagedBean.usuarios}"
+										var="usuario" itemLabel="#{usuario.nome}"
+										itemValue="#{usuario.codigoUsuario}" />
+								</h:selectOneMenu>
 
-				</p:panelGrid>
- -->
-			</h:form>
+								<p:selectOneMenu id="tipoPessoa" style="width:125px">
+									<f:selectItem itemLabel="#{msg['pages.inscricaoTime.opcao']}"
+										itemValue="" />
+									<f:selectItem
+										itemLabel="#{msg['pages.inscricaoTime.tipo.item2']}"
+										itemValue="" />
+									<f:selectItem
+										itemLabel="#{msg['pages.inscricaoTime.tipo.item3']}"
+										itemValue="" />
+									<f:selectItem
+										itemLabel="#{msg['pages.inscricaoTime.tipo.item4']}"
+										itemValue="" />
+									<f:selectItem
+										itemLabel="#{msg['pages.inscricaoTime.tipo.item5']}"
+										itemValue="" />
+								</p:selectOneMenu>
 
-			<h:form id="formInscricaoEquipe">
-				<p:panel id="painelTimeEquipe"
-					header="#{msg['pages.inscricaoTime.submenu2']}"
-					style="margin-bottom:10px;">
-					<p:panelGrid columns="4">
-						<p:outputLabel value="#{msg['pages.inscricaoTime.nome']}*:" />
-						<p:inputText value="" />
+								<p:commandButton id="btn_add"
+									value="#{msg['pages.inscricaoTime.adiciona']}">
+									<p:collector value="" addTo="" unique="true" />
+								</p:commandButton>
+							</p:panelGrid>
+						</p:panel>
+					</div>
 
-						<p:selectOneMenu id="tipoPessoa" style="width:125px">
-							<f:selectItem itemLabel="#{msg['pages.inscricaoTime.opcao']}"
-								itemValue="" />
-							<f:selectItem
-								itemLabel="#{msg['pages.inscricaoTime.tipo.item2']}"
-								itemValue="" />
-							<f:selectItem
-								itemLabel="#{msg['pages.inscricaoTime.tipo.item3']}"
-								itemValue="" />
-							<f:selectItem
-								itemLabel="#{msg['pages.inscricaoTime.tipo.item4']}"
-								itemValue="" />
-							<f:selectItem
-								itemLabel="#{msg['pages.inscricaoTime.tipo.item5']}"
-								itemValue="" />
-						</p:selectOneMenu>
+					<div class="ui-g-12">
+						<p:outputPanel id="infoGeral">
+							<p:dataTable value="#{inscricaoManagedBean.inscricoes}" var="aux"
+								id="registro">
 
-						<p:commandButton id="btn_add"
-							value="#{msg['pages.inscricaoTime.adiciona']}">
-							<p:collector value="" addTo="" unique="true" />
-						</p:commandButton>
-					</p:panelGrid>
-				</p:panel>
+								<p:column headerText="#{msg['pages.inscricaoTime.time']}">
+									<h:outputText value="#" />
+								</p:column>
 
-				<p:outputPanel id="infoGeral">
-					<p:dataTable value="#{inscricaoManagedBean.inscricoes}" var="aux"
-						id="registro">
+								<p:column headerText="#{msg['pages.inscricaoTime.nome']}">
+									<h:outputText value="" />
+								</p:column>
 
-						<p:column headerText="#{msg['pages.inscricaoTime.categoria']}">
-							<h:outputText value="" />
-						</p:column>
+								<p:column headerText="#{msg['pages.inscricaoTime.tipo']}">
+									<h:outputText value="" />
+								</p:column>
 
-						<p:column headerText="#{msg['pages.inscricaoTime.time']}">
-							<h:outputText value="#" />
-						</p:column>
+								<p:column headerText="#{msg['pages.inscricaoTime.acao']}">
+									<p:commandButton id="btn_remove"
+										value="#{msg['pages.inscricaoTime.remover']}">
+										<p:collector value="" addTo="" unique="true" />
+									</p:commandButton>
+								</p:column>
 
-						<p:column headerText="#{msg['pages.inscricaoTime.nome']}">
-							<h:outputText value="" />
-						</p:column>
-
-						<p:column headerText="#{msg['pages.inscricaoTime.tipo']}">
-							<h:outputText value="" />
-						</p:column>
-
-						<p:column headerText="#{msg['pages.inscricaoTime.acao']}">
-							<p:commandButton id="btn_remove"
-								value="#{msg['pages.inscricaoTime.remover']}">
-								<p:collector value="" addTo="" unique="true" />
-							</p:commandButton>
-						</p:column>
-
-					</p:dataTable>
-				</p:outputPanel>
+							</p:dataTable>
+						</p:outputPanel>
+					</div>
+				</div>
 			</h:form>
 		</div>
 

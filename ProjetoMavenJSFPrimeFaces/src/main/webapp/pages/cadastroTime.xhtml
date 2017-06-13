@@ -26,10 +26,17 @@
 				<p:outputLabel value="Cidade*" />
 				<p:inputText value="#{equipeManagedBean.equipe.cidade}"
 					required="true" label="Cidade" />
-					
-				<p:outputLabel for="dataInicio" value="Data de Fundação" />
-      			<p:calendar id="dataInicio" value="#{equipeManagedBean.equipe.dataFundacao}" showOn="button" />
 
+				<p:outputLabel for="dataInicio" value="Data de Fundação" />
+				<p:calendar id="dataInicio"
+					value="#{equipeManagedBean.equipe.dataFundacao}" showOn="button" />
+
+				<h:outputLabel value="Diretor " for="diretor" />
+				<h:selectOneMenu value="#{usuarioManagedBean.usuario.codigoUsuario}"
+					style="width:100%;" required="true">
+					<f:selectItems value="#{usuarioManagedBean.usuarios}" var="usuario"
+						itemLabel="#{usuario.nome}" itemValue="#{usuario.codigoUsuario}" />
+				</h:selectOneMenu>
 
 			</p:panelGrid>
 			<p:commandButton value="#{msg['pages.cadastroTime.btnSalvar']}"
@@ -46,6 +53,12 @@
 			</p:column>
 			<p:column headerText="Data de Fundação">
 				<p:outputLabel value="#{aux.dataFundacao}" />
+			</p:column>
+			<!--  Corrigir a exibição dos diretores -->
+			<p:column headerText="Diretor">
+				<ui:repeat value="#{aux.diretores}" var="variable">
+					<p:outputLabel value="#{variable.nome}" />
+				</ui:repeat>
 			</p:column>
 
 		</p:dataTable>
