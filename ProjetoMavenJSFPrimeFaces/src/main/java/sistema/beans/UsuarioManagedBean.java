@@ -15,6 +15,7 @@ public class UsuarioManagedBean {
 	private UsuarioService service = new UsuarioService();
 	private String nome;
 	private String password;
+	
 
 	public UsuarioManagedBean() {
 		super();
