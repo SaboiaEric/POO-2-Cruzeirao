@@ -14,10 +14,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import sistema.enums.Papeis;
 import sistema.enums.Sexo;
 
 @Entity
 public class Usuario implements Serializable {
+	public static final String Find_User_Name = "Usuario.pesquisarPorUserName";
+	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,6 +55,7 @@ public class Usuario implements Serializable {
 	private String rg;
 	private String cpf;
 	private String cref;
+	private Papeis papel;
 
 	private Sexo sexo;
 
@@ -175,6 +179,14 @@ public class Usuario implements Serializable {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
+	}
+
+	public Papeis getPapel() {
+		return papel;
+	}
+
+	public void setPapel(Papeis papel) {
+		this.papel = papel;
 	}
 
 }
