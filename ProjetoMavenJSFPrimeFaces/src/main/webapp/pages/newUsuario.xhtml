@@ -114,11 +114,14 @@ button {
 			<h:outputLabel value="#{msg['pages.novoUsuario.nome']}" />
 			<h:inputText value="#{usuarioManagedBean.usuario.nome}"
 				required="true" label="#{msg['pages.novoUsuario.nome']}" />
+				
+<!--		<p:outputLabel value="#{msg['pages.novoUsuario.nascimento']}" /> 
+      		<p:calendar required="true" id="nascimento" value="#{usuarioManagedBean.usuario.dataNasimento}" showOn="button" />
+verificar -->
 
-
+			<!-- alterado de inputText para inputMask-->	
 			<h:outputLabel value="#{msg['pages.novoUsuario.cpf']}" />
-			<h:inputText value="#{usuarioManagedBean.usuario.cpf}"
-				required="true" label="#{msg['pages.novoUsuario.cpf']}" />
+			<p:inputMask id="cpf" required="true" value="#{usuarioManagedBean.usuario.cpf}" mask="999.999.999-99"/>
 
 
 			<h:outputLabel value="#{msg['pages.novoUsuario.cref']}" />
@@ -136,7 +139,7 @@ button {
 
 
 			<h:outputLabel value="#{msg['pages.novoUsuario.genero']}" />
-			<p:selectOneRadio id="genero"
+			<p:selectOneRadio id="genero" required="true"
 				value="#{usuarioManagedBean.usuario.sexo}">
 				<f:selectItem itemLabel="#{msg['pages.novoUsuario.masculino']}" />
 				<f:selectItem itemLabel="#{msg['pages.novoUsuario.feminino']}" />
@@ -146,7 +149,7 @@ button {
 
 			<p:commandButton class="btn btn-primary btn-block btn-large"
 				value="#{msg['pages.novoUsuario.btnCadastrar']}"
-				action="#{usuarioManagedBean.salvar}" />
+				action="#{usuarioManagedBean.salvar}" update=":formNovoUsuario" />
 
 		</h:form>
 	</div>
