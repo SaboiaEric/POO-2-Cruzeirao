@@ -38,10 +38,10 @@ public class UsuarioManagedBean {
 
 	}
 
-	public String salvar() {
+	public void salvar() {
 		service.save(usuario);
 		usuario = new Usuario();
-		return "newLogin.xhtml";
+		///return "newLogin.xhtml";
 	}
 
 	public Usuario getUsuario() {

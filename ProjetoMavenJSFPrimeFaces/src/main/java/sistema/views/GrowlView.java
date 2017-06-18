@@ -20,7 +20,7 @@ public class GrowlView {
     public void saveMessage() {
         FacesContext context = FacesContext.getCurrentInstance();
          
-        context.addMessage(null, new FacesMessage("Successful",  "Your message: " + message) );
-        context.addMessage(null, new FacesMessage("Second Message", "Additional Message Detail"));
+        context.addMessage(null, new FacesMessage("Cadastrado com Sucesso",  "Faça o Login") );
+        
     }
 }
