@@ -11,18 +11,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
+import sistema.enums.Roles;
 import sistema.enums.Sexo;
 
 @Entity
 @Table(uniqueConstraints={@UniqueConstraint(columnNames={"cpf"})})
+@NamedQuery(name = "Usuario.pesquisarPorUserName", query = "select u from Usuario u where u.nome = :username")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	public static final String PESQUISAR_POR_USERNAME = "Usuario.pesquisarPorUserName";
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigoUsuario;
@@ -30,6 +35,7 @@ public class Usuario implements Serializable {
 	private String nome;
 	private String senha;
 	private String tipoUsuario = "NORMAL";
+	private Roles role;
 
 	public String getTipoUsuario() {
 		return tipoUsuario;
@@ -78,6 +84,14 @@ public class Usuario implements Serializable {
 	}
 
 	
+
+	public Roles getRole() {
+		return role;
+	}
+
+	public void setRole(Roles role) {
+		this.role = role;
+	}
 
 	public int getCodigoUsuario() {
 		return codigoUsuario;

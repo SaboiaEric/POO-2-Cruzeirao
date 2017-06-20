@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import sistema.enums.Roles;
 import sistema.modelos.Usuario;
 import sistema.service.UsuarioService;
 
@@ -39,6 +41,7 @@ public class UsuarioManagedBean {
 	}
 
 	public void salvar() {
+		usuario.setRole(Roles.NORMAL);
 		service.save(usuario);
 		usuario = new Usuario();
 		///return "newLogin.xhtml";
