@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+</h:head>
+<h:body>
+
+          
+		
+          <div align="center">
+
+		
+			<h:outputText value="#{msg['pages.novoUsuario.title']}" />
+
+
+
+
+			<h1>
+				<p:outputLabel value="#{msg['pages.novoUsuario.menu']}" />
+			</h1>
+
+
+			<h:form id="formNovoUsuario">
+
+				<p:growl id="growl" showDetail="true" sticky="true" />
+
+				<p:panelGrid columns="2">
+					<p:outputLabel value="#{msg['pages.novoUsuario.nome']}" />
+					<p:inputText value="#{usuarioManagedBean.usuario.nome}"
+						required="true" label="#{msg['pages.novoUsuario.nome']}" />
+
+					<p:outputLabel value="#{msg['pages.novoUsuario.nascimento']}" />
+					<p:calendar required="true" id="nascimento"
+						value="#{usuarioManagedBean.usuario.dataNasimento}"
+						showOn="button" />
+
+					<p:outputLabel value="#{msg['pages.novoUsuario.cpf']}" />
+					<p:inputMask id="cpf" required="true"
+						value="#{usuarioManagedBean.usuario.cpf}" mask="999.999.999-99" />
+
+
+
+					<p:outputLabel value="#{msg['pages.novoUsuario.cref']}" />
+					<p:inputText value="#{usuarioManagedBean.usuario.cref}"
+						label="#{msg['pages.novoUsuario.cref']}" />
+
+
+
+					<p:outputLabel value="#{msg['pages.novoUsuario.email']}" />
+					<p:inputText value="#{usuarioManagedBean.usuario.email}"
+						required="true" label="#{msg['pages.novoUsuario.email']}" />
+
+					<p:outputLabel value="#{msg['pages.novoUsuario.senha']}" />
+					<p:inputText value="#{usuarioManagedBean.usuario.senha}"
+						required="true" label="#{msg['pages.novoUsuario.senha']}" />
+
+
+
+					<p:outputLabel value="#{msg['pages.novoUsuario.genero']}" />
+					<p:selectOneRadio id="genero" required="true"
+						value="#{usuarioManagedBean.usuario.sexo}">
+						<f:selectItem itemLabel="#{msg['pages.novoUsuario.masculino']}"
+							itemValue="#{msg['pages.novoUsuario.masculino']}" />
+						<f:selectItem itemLabel="#{msg['pages.novoUsuario.feminino']}"
+							itemValue="#{msg['pages.novoUsuario.feminino']}" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+
+				<p:commandButton value="#{msg['pages.novoUsuario.btnCadastrar']}"
+					action="#{usuarioManagedBean.salvar}"
+					actionListener="#{growlView.saveMessage}" update=":formNovoUsuario" />
+					<br/>
+				<p:link href="/login.xhtml">Login</p:link>
+
+			</h:form>
+
+
+
+
+		
+
+
+	</div>
+
+</h:body>
+</html>

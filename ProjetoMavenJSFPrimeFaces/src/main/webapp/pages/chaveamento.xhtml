@@ -1,0 +1,119 @@
+
+<ui:composition 
+	template="templateMenu.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	>
+	
+	<ui:define name="title">
+		<h:outputText value="#{msg['pages.chaveamento.title']}"/>
+	</ui:define>
+
+	<ui:define name="principal">
+		<h1><p:outputLabel value="#{msg['pages.chaveamento.menu']}"/></h1>
+		
+		<h:form id="formGerenciamentoJogos">
+			<h3><p:outputLabel value="#{msg['pages.chaveamento.grupo']}"/></h3>
+			<p:panelGrid style="margin-top:25px">
+			    <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="7">2016-17 Cruzeirao</p:column>
+			        </p:row>
+			        <p:row>
+			            <p:column colspan="2">Conf. Semifinal</p:column>
+			            <p:column colspan="2">Conf. Final</p:column>
+			            <p:column colspan="2">Final</p:column>
+			            <p:column>Campeao</p:column>
+			        </p:row>
+			 
+			    </f:facet>
+			 
+			    <p:row>
+			        <p:column  >Sorocaba FC</p:column>
+			        <p:column  ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+		
+			        <p:column rowspan="2"  ></p:column>
+			        <p:column rowspan="2"  ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			 
+			        <p:column rowspan="5"></p:column>
+			        <p:column rowspan="5"><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			 
+			        <p:column rowspan="11"  ></p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column>Piedade FC</p:column>
+			        <p:column ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column colspan="4" styleClass="ui-widget-header">
+			            <p:spacer height="0"/>
+			        </p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column  >Votorantim FC</p:column>
+			        <p:column  ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			 
+			        <p:column rowspan="2"></p:column>
+			        <p:column rowspan="2"><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column>ZN Imortais</p:column>
+			        <p:column ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column colspan="6" styleClass="ui-widget-header">
+			            <p:spacer height="0"/>
+			        </p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column  >Iguatemi FC</p:column>
+			        <p:column  ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			 
+			        <p:column rowspan="2"  ></p:column>
+			        <p:column rowspan="2"  ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			 
+			        <p:column rowspan="5"  ></p:column>
+			        <p:column rowspan="5"  ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column>Votoran</p:column>
+			        <p:column ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column colspan="4" styleClass="ui-widget-header">
+			            <p:spacer height="0"/>
+			        </p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column>Unip</p:column>
+			        <p:column ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			 
+			        <p:column rowspan="2"></p:column>
+			        <p:column rowspan="2"><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			    </p:row>
+			 
+			    <p:row>
+			        <p:column  >Facens</p:column>
+			        <p:column  ><p:inputText style="width:25px;text-align: center;" value="#{juizManageBean.juiz.nome}"/></p:column>
+			    </p:row>
+			 
+			</p:panelGrid>
+			
+			<p:commandButton value="#{msg['pages.gerenciamentoJogos.menu']}" action="gerenciamentoJogos.xhtml"/>
+		</h:form>
+	
+	</ui:define>
+	
+</ui:composition>

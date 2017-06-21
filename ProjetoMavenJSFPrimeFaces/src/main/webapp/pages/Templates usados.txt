@@ -1,0 +1,5 @@
+https://www.primefaces.org/showcase/ui/overlay/confirmDialog.xhtml
+
+https://www.primefaces.org/showcase/ui/panel/dashboard.xhtml
+
+https://www.primefaces.org/showcase/ui/panel/wizard.xhtml
