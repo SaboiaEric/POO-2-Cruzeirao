@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import sistema.enums.Roles;
+import sistema.enums.TipoUsuario;
 import sistema.modelos.Usuario;
 import sistema.service.UsuarioService;
 
@@ -41,7 +42,15 @@ public class UsuarioManagedBean {
 	}
 
 	public void salvar() {
-		usuario.setRole(Roles.NORMAL);
+		if(usuario.getTipoUsuario().equals("ORGANAIZER") || usuario.getTipoUsuario().equals("ORGANIZADOR") ){
+			usuario.setRole(Roles.ORGANIZADOR);
+		}
+		else if(usuario.getTipoUsuario().equals("ADM")){
+			usuario.setRole(Roles.SUPERADMIN);
+		}
+		else{
+			usuario.setRole(Roles.NORMAL);
+		}
 		service.save(usuario);
 		usuario = new Usuario();
 		///return "newLogin.xhtml";

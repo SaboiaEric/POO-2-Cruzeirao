@@ -15,7 +15,7 @@
 		
 			<p:submenu label="#{msg['pages.comuns.menuLateral.campeonato']}">
 			<p:submenu label="#{msg['pages.comuns.menuLateral.cadastro']}">	
-				<p:menuitem value="#{msg['pages.cadastroCampeonato.menuLateral']}" url="cadastroCampeonato.xhtml" />			
+				<p:menuitem value="#{msg['pages.cadastroCampeonato.menuLateral']}" url="cadastroCampeonato.xhtml" rendered="#{request.isUserInRole('ORGANIZADOR') or request.isUserInRole('SUPERADMIN')}" />			
 				<p:menuitem value="#{msg['pages.cadastroCategoria.menuLateral']}" url="cadastroCategoria.xhtml" />					
 				<p:menuitem value="#{msg['pages.cadastroLocal.menuLateral']}" url="cadastroLocal.xhtml" />				
 				<p:menuitem value="#{msg['pages.chaveamento.menuLateral']}" url="chaveamento.xhtml" />				
@@ -44,9 +44,7 @@
 			<p:submenu label="#{msg['pages.comuns.menuLateral.options']}">
 				<p:menuitem value="#{msg['pages.linguagem.menu']}" url="linguagem.xhtml" />
 	       </p:submenu>
-	       
-	       
-		
+
 		</p:panelMenu>
 	</h:form>
 </ui:composition>
