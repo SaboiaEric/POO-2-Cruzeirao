@@ -17,7 +17,15 @@ public class Categoria implements Serializable{
 	private int codigoCategoria;
 	private String nome;
 	private int idadeMin;
+	private String genero;
 	
+	
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
 	public int getCodigoCategoria() {
 		return codigoCategoria;
 	}
@@ -36,13 +44,7 @@ public class Categoria implements Serializable{
 	public void setIdadeMin(int idadeMin) {
 		this.idadeMin = idadeMin;
 	}
-	public Sexo getGenero() {
-		return genero;
-	}
-	public void setGenero(Sexo genero) {
-		this.genero = genero;
-	}
-	private Sexo genero; 
+	 
 
 
 }

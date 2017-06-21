@@ -1,34 +1,35 @@
 package sistema.beans;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.*;
 
-import sistema.DAO.CampeonatoDAO;
 import sistema.modelos.Campeonato;
+import sistema.service.CampeonatoService;
 
-@ManagedBean(name = "CampeonatoMB")
-@ViewScoped
+@ManagedBean
+@SessionScoped
 public class CapeonatoManagedBean {
-   
-        private CampeonatoDAO campeonatoDAO = new CampeonatoDAO();
-        private Campeonato campeonato = new Campeonato();
-        
-        public String envia() {
-              
-              campeonato = campeonatoDAO.getCampeonato(campeonato.getNome());
-              if (campeonato == null) {
-                    campeonato = new Campeonato();
-                    return null;
-              } else {
-                    return "/main";
-              }
-        }
-   
-        public Campeonato getCampeonato() {
-              return campeonato;
-        }
-   
-        public void setCampeonato(Campeonato campeonato) {
-              this.campeonato = campeonato;
-        }
-  }
+	
+	private Campeonato campeonato = new Campeonato();
+	private CampeonatoService service = new CampeonatoService();
+	
+	public void salvar()
+	{
+		service.save(campeonato);
+		campeonato = new Campeonato();
+	}
+
+	public Campeonato getCampeonato() {
+		return campeonato;
+	}
+
+	public void setCampeonato(Campeonato campeonato) {
+		this.campeonato = campeonato;
+	}
+
+	public List<Campeonato> getCampeonatos() {
+		return service.getList();
+	}
+}

@@ -34,7 +34,6 @@ public class CategoriaManagedBean {
 	public void salvar() {
 		service.save(categoria);
 		categoria = new Categoria();
-
 	}
 	
 	public List<Categoria> getCategorias() {

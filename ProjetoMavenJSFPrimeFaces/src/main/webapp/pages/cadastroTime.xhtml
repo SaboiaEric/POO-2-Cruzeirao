@@ -48,18 +48,14 @@
 			<p:column headerText="#{msg['pages.cadastroTime.nome']}">
 				<p:outputLabel value="#{aux.nome}" />
 			</p:column>
-			<p:column headerText="#{msg['pages.cadastroTime.diretor']}">
+			<p:column headerText="Cidade">
 				<p:outputLabel value="#{aux.cidade}" />
 			</p:column>
 			<p:column headerText="Data de Fundação">
 				<p:outputLabel value="#{aux.dataFundacao}" />
 			</p:column>
 			<!--  Corrigir a exibição dos diretores -->
-			<p:column headerText="Diretor">
-				<ui:repeat value="#{aux.diretores}" var="variable">
-					<p:outputLabel value="#{variable.nome}" />
-				</ui:repeat>
-			</p:column>
+			
 
 		</p:dataTable>
 
